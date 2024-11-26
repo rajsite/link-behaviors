@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Root index.html</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script defer src="./location.js"></script>
+</head>
+<body>
+    <p>This page is located at /index.html and should be the opening page of the web app.</p>
+    <p>Links to files in subfolders should work without a relative path prefix (i.e. current url on target page should contain index.html): <a href="subfolder/index.html">subfolder/index.html</a></p>
+    <p>Links to files in subfolders should work with a relative path prefix (i.e. current url on target page should contain index.html): <a href="./subfolder/index.html">./subfolder/index.html</a></p>
+    <p>Links to subfolders without a relative path prefix and with a trailing slash should serve the contexts of index.html (i.e. current url on target page should not contain index.html): <a href="subfolder/">subfolder/</a></p>
+    <p>Links to subfolders with a relative path prefix and with a trailing slash should serve the contexts of index.html (i.e. current url on target page should not contain index.html): <a href="./subfolder/">./subfolder/</a></p>
+    <p>Links to subfolders without a relative path prefix and without a trailing slash should redirect to having a trailing slash which should then behave as above (i.e. current url on target page should not contain index.html): <a href="subfolder">subfolder</a></p>
+    <p>Links to subfolders with a relative path prefix and without a trailing slash should redirect to having a trailing slash which should then behave as above (i.e. current url on target page should not contain index.html): <a href="./subfolder">./subfolder</a></p>
+    <p><b>Note:</b> Redirect of a subdirectory from no trailing slash (/subfolder) to a trailing slash (/subfolder/) is important for relative paths to resolve correctly on that target page. Consider ./image.jpg which without a trailing slash resolves to /image.jpg while with a trailing slash resolves to /subfolder/image.jpg.</p>
+</body>
+</html>
